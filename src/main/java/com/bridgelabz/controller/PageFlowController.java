@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +26,7 @@ import com.bridgelabz.pageRoute.PageRouteDepth;
 public class PageFlowController
 {
 	// Creating object of HashMap for SessionId with List of PageId
-	HashMap<String, List<String>> sessionWithPageIdHashMap= new HashMap<String, List<String>>();
+	Map<String, List<String>> sessionWithPageIdHashMap= new HashMap<String, List<String>>();
 	HashMap<String, Integer> pageRouteDepthHashMap= new HashMap<String, Integer>();
 	
 	@RequestMapping(value="/upload", method=RequestMethod.GET)
@@ -62,7 +63,7 @@ public class PageFlowController
 		// creating object of PageRouteDepth class
 		PageRouteDepth pageRouteDepthObject= new PageRouteDepth();
 		// creating object of pageRouteDepthHashMap and passing sessionWithPageIdHashMap in the pageDepthIdCount method
-		HashMap<String,Integer> depthIdWithPageDepthCount= pageRouteDepthObject.pageDepthIdCount(sessionWithPageIdHashMap);
+		Map<String,Integer> depthIdWithPageDepthCount= pageRouteDepthObject.pageDepthIdCount(sessionWithPageIdHashMap);
 		System.out.println("Inside The main   "+depthIdWithPageDepthCount);
 		// using object of Model class adding attribute having attribute name and value
 		model.addAttribute("depthIdWithPageDepthCount",depthIdWithPageDepthCount);

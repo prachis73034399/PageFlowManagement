@@ -4,13 +4,14 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import com.csvreader.CsvReader;
 public class CSVReader 
 {
 	// creating method which will return hashMap having count for each sessionId list of PageId
-	public HashMap<String, List<String>> csvReadMethod(String csvFilePath) 
+	public Map<String, List<String>> csvReadMethod(String csvFilePath) 
 	{
 		// creating hashMap object for sessionId and pageId
 		HashMap<String, List<String>> sessionWithPageIdHashMap = new HashMap<String, List<String>>();

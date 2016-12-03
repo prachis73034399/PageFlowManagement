@@ -1,27 +1,20 @@
 package com.bridgelabz.pageRoute;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.Set;
-
-import com.bridgelabz.model.PageDepth;
+import java.util.TreeMap;
 
 
 
 public class PageRouteDepth 
 {
 
-	public HashMap<String, Integer> pageDepthIdCount(HashMap<String, List<String>> sessionHashMap)
+	public Map<String, Integer> pageDepthIdCount(Map<String, List<String>> sessionHashMap)
 	{
 		// creating object of HashMap for storing DEpthId: Page
-		HashMap<String, Integer> depthIdWithPageDepthCount = new HashMap<String, Integer>();
+		Map<String, Integer> depthIdWithPageDepthCount = new TreeMap<String, Integer>();
 		// keySet method of HashMap for getting set of sessionIds and storing it in a Set collection type
 		Set<String> setOfSessionId = sessionHashMap.keySet();
 		String pageRoute;
